@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>Thanksgiving Gallery</h1>
+<div class="gallery-container">
+    {% for img in images %}
+        <div class="gallery-item">
+            <img src="{{ img.image.url }}" alt="{{ img.caption }}" class="gallery-image">
+            {% if img.caption %}
+                <p class="caption">{{ img.caption }}</p>
+            {% endif %}
+        </div>
+    {% empty %}
+        <p>No images yet.</p>
+    {% endfor %}
+</div>
+{% endblock %}

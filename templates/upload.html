@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{%load static%}
+{% block title %}Upload Image{% endblock %}
+{% block content %}
+  <h1>Upload an Image</h1>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label>Caption: <input type="text" name="caption"></label><br>
+    <label>Category:
+      <select name="category">
+        <option value="general">General</option>
+        <option value="thanksgiving">Thanksgiving</option>
+      </select>
+    </label><br>
+    <input type="file" name="image" required><br>
+    <button type="submit">Upload</button>
+  </form>
+{% endblock %}

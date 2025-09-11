@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home - Church Site{% endblock %}
+
+{% block content %}
+<h1>Welcome to Mother of the Redeemer{% if request.user.is_authenticated %}, {{ request.user.username }}{% endif %}!</h1>
+
+<p>Check out our gallery and latest announcements!</p>
+
+<div class="home-gallery">
+    {% for image in images %}
+        <img src="{{ image.file.url }}" alt="{{ image.title }}">
+    {% empty %}
+        <p>No images uploaded yet.</p>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{%load static%}
+{% block title %}Add Announcement{% endblock %}
+{% block content %}
+  <h1>Add New Announcement</h1>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Post Announcement</button>
+  </form>
+{% endblock %}

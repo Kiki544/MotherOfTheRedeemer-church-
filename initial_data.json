@@ -1,0 +1,50 @@
+[
+  {
+    "model": "gallery.adminsecretcode",
+    "pk": 1,
+    "fields": {
+      "code": "church2025",
+      "updated_at": "2025-09-11T12:00:00Z"
+    }
+  },
+  {
+    "model": "gallery.announcement",
+    "pk": 1,
+    "fields": {
+      "title": "Sunday Service",
+      "message": "Join us this Sunday at 9AM for worship and thanksgiving.",
+      "date_posted": "2025-09-11T12:00:00Z",
+      "event_date": "2025-09-14"
+    }
+  },
+  {
+    "model": "gallery.announcement",
+    "pk": 2,
+    "fields": {
+      "title": "Youth Fellowship",
+      "message": "All youths are invited for fellowship on Friday at 5PM.",
+      "date_posted": "2025-09-11T12:30:00Z",
+      "event_date": "2025-09-12"
+    }
+  },
+  {
+    "model": "gallery.galleryimage",
+    "pk": 1,
+    "fields": {
+      "caption": "Church Main Hall",
+      "category": "general",
+      "uploaded_at": "2025-09-11T12:00:00Z",
+      "image": "gallery/sample1.jpg"
+    }
+  },
+  {
+    "model": "gallery.galleryimage",
+    "pk": 2,
+    "fields": {
+      "caption": "Thanksgiving Service 2025",
+      "category": "thanksgiving",
+      "uploaded_at": "2025-09-11T12:10:00Z",
+      "image": "gallery/sample2.jpg"
+    }
+  }
+]

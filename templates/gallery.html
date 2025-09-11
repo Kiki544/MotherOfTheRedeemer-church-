@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>Gallery</h1>
+
+<!-- Category Filter Buttons -->
+<div class="category-filters">
+    <a href="{% url 'gallery' %}?category=general" 
+       class="filter-btn {% if selected_category == 'general' %}active{% endif %}">
+       General
+    </a>
+    <a href="{% url 'gallery' %}?category=thanksgiving" 
+       class="filter-btn {% if selected_category == 'thanksgiving' %}active{% endif %}">
+       Thanksgiving
+    </a>
+</div>
+
+<div class="gallery-list">
+    {% for img in images %}
+        <div class="gallery-item">
+            <img src="{{ img.image.url }}" alt="{{ img.caption }}">
+            {% if img.caption %}
+                <p class="caption">{{ img.caption }}</p>
+            {% endif %}
+        </div>
+    {% empty %}
+        <p>No images available in this category.</p>
+    {% endfor %}
+</div>
+
+<div class="gallery-list">
+  {% for image in images %}
+      <div class="gallery-item">
+          <img src="{{ image.image.url }}" alt="{{ image.caption }}">
+          <p class="caption">{{ image.caption }}</p>
+
+          {% if user.is_staff or user.is_superuser %}
+              <form action="{% url 'delete_image' image.id %}" method="get" style="margin-top:5px;">
+                  <button type="submit" style="background:#e74c3c; color:white; padding:5px 10px; border:none; border-radius:4px;">
+                      Delete
+                  </button>
+              </form>
+          {% endif %}
+      </div>
+  {% endfor %}
+</div>
+
+{% endblock %}
