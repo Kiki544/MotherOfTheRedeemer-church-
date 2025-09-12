@@ -23,6 +23,7 @@ main, .page-container, .content {
 }
 
 /* ===== Navbar ===== */
+/* ===== Navbar ===== */
 header {
   background: #1c2a48;
   box-shadow: 0 5px 20px rgba(0,0,0,0.25);
@@ -40,11 +41,14 @@ header {
   align-items: center;
 }
 
-.navbar .logo {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #fff;
+/* Logo */
+.logo img {
+  height: 55px;       /* reasonable size for navbar */
+  width: auto;        /* keeps aspect ratio */
+  object-fit: contain; 
+  display: block;     /* removes inline spacing issues */
 }
+
 
 .navbar .nav-links {
   display: flex;
@@ -88,6 +92,8 @@ header {
   box-shadow: 0 4px 8px rgba(0,0,0,0.08);
   transition: all 0.3s ease;
 }
+
+
 
 /* Hover glow like schedule cards */
 .announcement:hover {
