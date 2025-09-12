@@ -1,18 +1,174 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Home - Church Site{% endblock %}
-
 {% block content %}
-<h1>Welcome to Mother of the Redeemer{% if request.user.is_authenticated %}, {{ request.user.username }}{% endif %}!</h1>
 
-<p>Check out our gallery and latest announcements!</p>
+<div class="home-container">
+  
+    <section class="welcome-section">
+        <div class="welcome-dropdown">
+            <h2 class="welcome-title">Welcome to Our Parish</h2>
+            
+            </div>
+        </div>
+    </section>
 
-<div class="home-gallery">
-    {% for image in images %}
-        <img src="{{ image.file.url }}" alt="{{ image.title }}">
-    {% empty %}
-        <p>No images uploaded yet.</p>
-    {% endfor %}
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Welcome to Our Church</h1>
+            <p>A community of faith, love, and service. We’re glad you’re here!</p>
+            <div class="hero-buttons">
+                <a href="{% url 'gallery' %}" class="btn">View Gallery</a>
+                <a href="{% url 'announcements' %}" class="btn btn-secondary">See Announcements</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="{% static 'images/church-hero.jpg' %}" alt="Church Image">
+        </div>
+    </section>
+
+    <!-- Parish Welcome Section -->
+    <section class="welcome-section">
+        <div class="welcome-image">
+            <img src="{% static 'images/Fr Jude.jpg' %}" alt="Parish Priest">
+        </div>
+        <div class="welcome-text">
+            <h2>PARISH PRIEST WELCOME!</h2>
+            <p>Dear Beloved Parishioners and Friends,</p>
+            <p>
+                It is with profound joy and gratitude to God that I welcome you all to our parish community.
+                Whether you are a long-standing member, a visitor, or new to our congregation,
+                please know that you are warmly embraced as part of our spiritual family.
+            </p>
+            <p>
+                Our parish is a place where faith is nurtured, hope is strengthened, and love is shared among all. 
+                Together, we seek to grow closer to Christ through the Word, Sacraments, and a life of service.
+                We encourage you to participate actively in our liturgies, ministries, and community events as we journey together in faith.
+            </p>
+            <p>
+                May the peace of Christ dwell richly in your hearts,
+                and may this parish be a source of spiritual nourishment and support for you and your 
+                family.
+            </p>
+            <p>
+               Once again, welcome, and may God bless you abundantly.
+            </p>
+            <p>
+                Yours in Christ,<br><strong>Rev. Fr Jude </strong><br>Parish Priest
+            </p>
+        </div>
+    </section>
+
+    <!-- Mass Schedule Section -->
+    <section class="mass-schedule">
+        <div class="mass-info">
+            <h2>Join Us for Holy Mass</h2>
+            <p>
+                We invite you to experience the grace and blessings of the Eucharist at our parish.
+            </p>
+        </div>
+        <div class="schedule-card">
+            <h3>Weekday Masses / Parish Activities</h3>
+            <ul>
+                <li><span>Monday</span><span>06:00 AM / 06:30 PM</span></li>
+                <li><span>Tuesday</span><span>06:00 AM / 06:30 PM</span></li>
+                <li><span>Wednesday</span><span>06:00 AM / 06:30 PM</span></li>
+                <li><span>Thursday</span><span>06:00 AM / 06:30 PM</span></li>
+                <li><span>Friday</span><span>06:00 AM / 06:30 PM</span></li>
+                <li><span>Saturday</span><span>07:00 AM</span></li>
+                <li><span>Sunday</span><span>08:00 AM / 10:00 AM</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- === Church Statistics Section (Counter) === -->
+    <section class="stats-section">
+        <div class="stats-container">
+            <!-- Organizations -->
+            <div class="stat-item" data-target="15" data-plus="true">
+                <div class="stat-icon">
+                    <!-- people icon -->
+                    <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                </div>
+                <div class="stat-number">0</div>
+                <div class="stat-label">Organizations & Societies</div>
+            </div>
+
+            <!-- Registered Members -->
+            <div class="stat-item" data-target="1000" data-plus="true">
+                <div class="stat-icon">
+                    <!-- group icon -->
+                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                </div>
+                <div class="stat-number">0</div>
+                <div class="stat-label">Registered Congregation</div>
+            </div>
+
+            <!-- Priests -->
+            <div class="stat-item" data-target="4">
+                <div class="stat-icon">
+                    <!-- cross-like icon -->
+                    <svg viewBox="0 0 24 24"><path d="M12 2L12 22"/><path d="M5 7L12 2L19 7"/></svg>
+                </div>
+                <div class="stat-number">0</div>
+                <div class="stat-label">Priests</div>
+            </div>
+        </div>
+    </section>
+
 </div>
+
+<!-- Counter script placed here so base.html doesn't need extra blocks -->
+<script>
+    // animateCounter: smooth count from start->end using easing
+    function animateCounter(element, start, end, duration, hasPlus = false) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+            if (!startTimestamp) startTimestamp = timestamp;
+            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3); // easing
+            const current = Math.floor(eased * (end - start) + start);
+
+            if (end >= 1000) {
+                element.textContent = current.toLocaleString() + (hasPlus ? '+' : '');
+            } else {
+                element.textContent = current + (hasPlus ? '+' : '');
+            }
+
+            if (progress < 1) {
+                requestAnimationFrame(step);
+            }
+        };
+        requestAnimationFrame(step);
+    }
+
+    // IntersectionObserver to trigger when visible
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const statItem = entry.target;
+                const numberEl = statItem.querySelector('.stat-number');
+                const target = parseInt(statItem.dataset.target || 0, 10);
+                const hasPlus = statItem.dataset.plus === "true";
+
+                // show animation class (slide-up)
+                statItem.classList.add('animate');
+
+                // start counter after small delay for nicer effect
+                setTimeout(() => {
+                    animateCounter(numberEl, 0, target, 1800, hasPlus);
+                }, 250);
+
+                observer.unobserve(statItem);
+            }
+        });
+    }, { threshold: 0.45, rootMargin: '0px 0px -80px 0px' });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.stat-item').forEach(item => observer.observe(item));
+    });
+</script>
 {% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="page-container">
+    <h1>Parish Laity Council</h1>
+    <p>
+        The Parish Laity Council represents the voice of the laity in the parish.
+    </p>
+
+    <!-- Laity Council Images -->
+    <div class="image-gallery">
+        <div class="image-card">
+            <img src="{% static 'images/placeholder5.jpg' %}" alt="Laity Member 1">
+            <p>Council Chair: [Name]</p>
+        </div>
+        <div class="image-card">
+            <img src="{% static 'images/placeholder6.jpg' %}" alt="Laity Member 2">
+            <p>Secretary: [Name]</p>
+        </div>
+        <!-- Add more cards as needed -->
+    </div>
+</div>
+{% endblock %}

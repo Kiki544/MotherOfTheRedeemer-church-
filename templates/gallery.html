@@ -30,20 +30,21 @@
 </div>
 
 <div class="gallery-list">
-  {% for image in images %}
-      <div class="gallery-item">
-          <img src="{{ image.image.url }}" alt="{{ image.caption }}">
-          <p class="caption">{{ image.caption }}</p>
+  {% for img in images %}
+    <div class="gallery-item">
+        <img src="{{ img.image.url }}" alt="{{ img.caption }}" class="gallery-image">
+        {% if img.caption %}
+            <p class="caption">{{ img.caption }}</p>
+        {% endif %}
+        
+        {% if user.is_authenticated and user.is_staff %}
+            <p><a href="{% url 'delete_image' img.id %}">Delete</a></p>
+        {% endif %}
+    </div>
+{% empty %}
+    <p>No images yet.</p>
+{% endfor %}
 
-          {% if user.is_staff or user.is_superuser %}
-              <form action="{% url 'delete_image' image.id %}" method="get" style="margin-top:5px;">
-                  <button type="submit" style="background:#e74c3c; color:white; padding:5px 10px; border:none; border-radius:4px;">
-                      Delete
-                  </button>
-              </form>
-          {% endif %}
-      </div>
-  {% endfor %}
 </div>
 
 {% endblock %}

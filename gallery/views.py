@@ -49,6 +49,21 @@ def announcements(request):
     notes = Announcement.objects.order_by("-date_posted")
     return render(request, "announcements.html", {"notes": notes})
 
+from django.shortcuts import render
+
+def brief_history(request):
+    return render(request, 'brief_history.html')
+
+def our_team(request):
+    return render(request, 'our_team.html')
+
+def parish_pastoral_council(request):
+    return render(request, 'parish_pastoral_council.html')
+
+def parish_laity_council(request):
+    return render(request, 'parish_laity_council.html')
+
+
 # Add announcement
 @login_required
 @user_passes_test(lambda u: u.is_staff or u.is_superuser)

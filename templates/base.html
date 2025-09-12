@@ -4,46 +4,64 @@
     <meta charset="UTF-8">
     <title>{% block title %}Mother of The Redeemer{% endblock %}</title>
     {% load static %}
-    
     <link rel="icon" href="{% static 'favicon.png' %}" type="image/png">
-
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
-<header>
-  <nav class="navbar">
-    <a href="/" class="logo">ChurchSite</a>
-    <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
-      <span></span><span></span><span></span>
-    </div>
-    <div class="nav-links">
-      <a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a>
-      <a href="/gallery/" class="{% if '/gallery/' in request.path %}active{% endif %}">Gallery</a>
-      <a href="/thanksgiving/" class="{% if '/thanksgiving/' in request.path %}active{% endif %}">Thanksgiving</a>
-      <a href="/announcements/" class="{% if '/announcements/' in request.path %}active{% endif %}">Announcements</a>
-
-      {% if user.is_authenticated and user.is_staff %}
-      <div class="dropdown">
-        <a href="#" class="dropdown-toggle">Admin ▾</a>
-        <div class="dropdown-menu">
-          <a href="/upload/" class="{% if '/upload/' in request.path %}active{% endif %}">Upload</a>
-          <a href="/announcements/add/" class="{% if '/announcements/add/' in request.path %}active{% endif %}">Add Announcement</a>
-          <a href="/logout/">Logout</a>
-        </div>
-      </div>
-      {% else %}
-      <a href="/login/" class="{% if '/login/' in request.path %}active{% endif %}">Login</a>
-      {% endif %}
-    </div>
-  </nav>
-</header>
-
 
 <body>
-    <div class="content">
-        {% block content %}{% endblock %}
-    </div>
-</body>
+<header>
+  <div class="navbar">
+    <a href="{% url 'home' %}" class="logo">Parish Name</a>
 
+    <div class="nav-links">
+      <a href="{% url 'home' %}" class="{% if request.path == '/' %}active{% endif %}">Home</a>
+      <a href="{% url 'gallery' %}" class="{% if '/gallery/' in request.path %}active{% endif %}">Gallery</a>
+      <a href="{% url 'thanksgiving' %}" class="{% if '/thanksgiving/' in request.path %}active{% endif %}">Thanksgiving</a>
+      <a href="{% url 'announcements' %}" class="{% if '/announcements/' in request.path %}active{% endif %}">Announcements</a>
+
+      <!-- About Us Dropdown -->
+      <div class="dropdown">
+        <a href="#">About Us ▾</a>
+        <div class="dropdown-content">
+          <a href="{% url 'brief_history' %}">Brief History</a>
+          <a href="{% url 'our_team' %}">Our Team</a>
+          <a href="{% url 'parish_pastoral_council' %}">Parish Pastoral Council</a>
+          <a href="{% url 'parish_laity_council' %}">Parish Laity Council</a>
+        </div>
+      </div>
+
+      {% if user.is_authenticated and user.is_staff %}
+        <div class="dropdown">
+          <a href="#">Admin ▾</a>
+          <div class="dropdown-content">
+            <a href="{% url 'upload_image' %}">Upload Image</a>
+            <a href="{% url 'add_announcement' %}">Add Announcement</a>
+            <a href="{% url 'logout' %}">Logout</a>
+          </div>
+        </div>
+      {% endif %}
+
+      {% if user.is_authenticated %}
+        <a href="{% url 'logout' %}" class="login-btn">Logout</a>
+      {% else %}
+        <a href="{% url 'admin_login' %}" class="login-btn">Login</a>
+      {% endif %}
+    </div>
+
+    <div class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+</header>
+
+<!-- Main content area -->
+<div class="content">
+    {% block content %}{% endblock %}
+</div>
+
+<!-- Footer -->
 <footer>
   <div class="footer-container">
     <div class="footer-section">
@@ -83,4 +101,16 @@
   </div>
 </footer>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+      const menuToggle = document.querySelector('.menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+  
+      menuToggle.addEventListener('click', () => {
+          navLinks.classList.toggle('show'); // toggles visibility
+      });
+  });
+</script>
+
+</body>
 </html>

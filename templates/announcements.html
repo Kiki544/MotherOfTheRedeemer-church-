@@ -1,21 +1,27 @@
 {% extends "base.html" %}
-{%load static%}
+{% load static %}
 {% block title %}Announcements{% endblock %}
 {% block content %}
-  <h1>Church Announcements</h1>
-  {% if user.is_authenticated and user.is_staff %}
-    <p><a href="/announcements/add/">➕ Add New Announcement</a></p>
-  {% endif %}
-  {% for note in notes %}
-    <div class="announcement">
-      <h2>{{ note.title }}</h2>
-      <p>{{ note.message }}</p>
-      {% if note.event_date %}
-        <strong>Event Date:</strong> {{ note.event_date }}<br>
-      {% endif %}
-      <small>Posted on {{ note.date_posted|date:"M d, Y H:i" }}</small>
+  <div class="announcements-page">
+    <h1>Church Announcements</h1>
+
+    {% if user.is_authenticated and user.is_staff %}
+      <p><a href="/announcements/add/">➕ Add New Announcement</a></p>
+    {% endif %}
+
+    <div class="announcements-container">
+      {% for note in notes %}
+        <div class="announcement">
+          <h2>{{ note.title }}</h2>
+          <p>{{ note.message }}</p>
+          {% if note.event_date %}
+            <p><strong>Event Date:</strong> {{ note.event_date }}</p>
+          {% endif %}
+          <small>Posted on {{ note.date_posted|date:"M d, Y H:i" }}</small>
+        </div>
+      {% empty %}
+        <p>No announcements yet.</p>
+      {% endfor %}
     </div>
-  {% empty %}
-    <p>No announcements yet.</p>
-  {% endfor %}
+  </div>
 {% endblock %}

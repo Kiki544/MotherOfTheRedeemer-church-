@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="page-container">
+    <h1>Our Team</h1>
+    <p>
+        Our parish team is made up of dedicated clergy, staff, and volunteers who work together to support the spiritual and community life of our parish.
+    </p>
+
+    <!-- Team Images -->
+    <div class="image-gallery">
+        <div class="image-card">
+            <img src="{% static 'images/placeholder1.jpg' %}" alt="Team Member 1">
+            <p>Parish Priest: Rev. [Name]</p>
+        </div>
+        <div class="image-card">
+            <img src="{% static 'images/placeholder2.jpg' %}" alt="Team Member 2">
+            <p>Assistant Priest: Rev. [Name]</p>
+        </div>
+        <!-- Add more cards as needed -->
+    </div>
+</div>
+{% endblock %}
