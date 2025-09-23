@@ -1,0 +1,157 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="bulletin-detail">
+    <h2>{{ bulletin.title }}</h2>
+    <p><strong>Date:</strong> {{ bulletin.date }}</p>
+
+    <!-- Reading 1 -->
+    <h3>Reading 1</h3>
+    <div id="reading_1_section">
+        {% if bulletin.reading_1 %}
+            <div id="reading_1_text">{{ bulletin.reading_1|safe }}</div>
+            <p class="citation"><em>{{ bulletin.reading_1_citation }}</em></p>
+            {%if user.is_staff %}
+                <div class="bulletin-actions">
+                    <button class="delete-btn" data-field="reading_1" data-id="{{ bulletin.id }}">Delete</button>
+                    <button class="refetch-btn" data-field="reading_1" data-id="{{ bulletin.id }}">Refetch</button>
+                </div>
+            {% endif %}
+        {% else %}
+            <p id="reading_1_text" class="empty">No content yet.</p>
+            {%if user.is_staff %}    
+                <div class="bulletin-actions">
+                    <button class="refetch-btn" data-field="reading_1" data-id="{{ bulletin.id }}">Refetch</button>
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <!-- Responsorial Psalm -->
+    <h3>Responsorial Psalm</h3>
+    <div id="responsorial_psalm_section">
+        {% if bulletin.responsorial_psalm %}
+            <div id="responsorial_psalm_text">{{ bulletin.responsorial_psalm|safe }}</div>
+            {% if bulletin.psalm_refrain %}
+                <p><strong>Refrain:</strong> {{ bulletin.psalm_refrain }}</p>
+            {% endif %}
+            <p class="citation"><em>{{ bulletin.psalm_citation }}</em></p>
+            {%if user.is_staff %}
+                <div class="bulletin-actions">
+                    <button class="delete-btn" data-field="responsorial_psalm" data-id="{{ bulletin.id }}">Delete</button>
+                    <button class="refetch-btn" data-field="responsorial_psalm" data-id="{{ bulletin.id }}">Refetch</button>
+                </div>
+            {% endif %}
+        {% else %}
+            <p id="responsorial_psalm_text" class="empty">No content yet.</p>
+            {%if user.is_staff %}    
+                <div class="bulletin-actions">
+                    <button class="refetch-btn" data-field="responsorial_psalm" data-id="{{ bulletin.id }}">Refetch</button>
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <!-- Reading 2 -->
+    <h3>Reading 2</h3>
+    <div id="reading_2_section">
+        {% if bulletin.reading_2 %}
+            <div id="reading_2_text">{{ bulletin.reading_2|safe }}</div>
+            <p class="citation"><em>{{ bulletin.reading_2_citation }}</em></p>
+            {%if user.is_staff %}
+                <div class="bulletin-actions">
+                    <button class="delete-btn" data-field="reading_2" data-id="{{ bulletin.id }}">Delete</button>
+                    <button class="refetch-btn" data-field="reading_2" data-id="{{ bulletin.id }}">Refetch</button>
+                </div>
+            {% endif %}
+        {% else %}
+            <p id="reading_2_text" class="empty">No content yet.</p>
+            {%if user.is_staff %}
+                <div class="bulletin-actions">
+                    <button class="refetch-btn" data-field="reading_2" data-id="{{ bulletin.id }}">Refetch</button>
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+
+    <!-- Gospel -->
+    <h3>Gospel</h3>
+    <div id="gospel_section">
+        {% if bulletin.gospel %}
+            <div id="gospel_text">{{ bulletin.gospel|safe }}</div>
+            <p class="citation"><em>{{ bulletin.gospel_citation }}</em></p>
+            {%if user.is_staff %}
+                <div class="bulletin-actions">
+                    <button class="delete-btn" data-field="gospel" data-id="{{ bulletin.id }}">Delete</button>
+                    <button class="refetch-btn" data-field="gospel" data-id="{{ bulletin.id }}">Refetch</button>
+                </div>
+            {% endif %}
+        {% else %}
+            <p id="gospel_text" class="empty">No content yet.</p>
+            {%if user.is_staff %}
+                <div class="bulletin-actions">
+                    <button class="refetch-btn" data-field="gospel" data-id="{{ bulletin.id }}">Refetch</button>
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    function sendAction(action, field, id) {
+        fetch(`/bulletins/${id}/update_readings/`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "X-CSRFToken": "{{ csrf_token }}"
+            },
+            body: JSON.stringify({ action: action, field: field })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                const section = document.getElementById(`${data.field}_section`);
+                const textEl = document.getElementById(`${data.field}_text`);
+
+                if (data.content && data.content.trim() !== "") {
+                    textEl.innerHTML = data.content;
+                    textEl.classList.remove("empty");
+                    section.querySelector(".bulletin-actions").innerHTML = `
+                        <button class="delete-btn" data-field="${data.field}" data-id="${id}">Delete</button>
+                        <button class="refetch-btn" data-field="${data.field}" data-id="${id}">Refetch</button>
+                    `;
+                } else {
+                    textEl.innerHTML = "No content yet.";
+                    textEl.classList.add("empty");
+                    section.querySelector(".bulletin-actions").innerHTML = `
+                        <button class="refetch-btn" data-field="${data.field}" data-id="${id}">Refetch</button>
+                    `;
+                }
+
+                bindButtons(); // re-bind new buttons
+            } else {
+                alert("Error: " + data.error);
+            }
+        })
+        .catch(err => alert("Request failed: " + err));
+    }
+
+    function bindButtons() {
+        document.querySelectorAll(".delete-btn").forEach(btn => {
+            btn.onclick = function () {
+                sendAction("delete", this.dataset.field, this.dataset.id);
+            };
+        });
+
+        document.querySelectorAll(".refetch-btn").forEach(btn => {
+            btn.onclick = function () {
+                sendAction("refetch", this.dataset.field, this.dataset.id);
+            };
+        });
+    }
+
+    bindButtons();
+});
+</script>
+{% endblock %}

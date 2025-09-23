@@ -4,7 +4,7 @@ from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.views import LoginView
-from .models import GalleryImage, Announcement, AdminSecretCode
+from .models import GalleryImage, Announcement, AdminSecretCode, Bulletin
 
 # Home page
 def home(request):
@@ -115,3 +115,23 @@ class GalleryUploadForm(forms.ModelForm):
 class AdminLoginView(LoginView):
     authentication_form = AdminLoginForm
     template_name = "admin_login.html"
+
+# gallery/forms.py
+class BulletinForm(forms.ModelForm):
+    fetch_readings = forms.BooleanField(
+        required=False,
+        help_text="Check this to auto-fetch readings from USCCB"
+    )
+
+    class Meta:
+        model = Bulletin
+        fields = ["date", "title", "reading_1", "responsorial_psalm", "reading_2", "gospel"]
+
+        widgets = {
+            "date": forms.DateInput(attrs={"type": "date", "class": "form-control"}),
+            "title": forms.TextInput(attrs={"class": "form-control"}),
+            "reading_1": forms.Textarea(attrs={"rows": 3, "class": "form-control"}),
+            "responsorial_psalm": forms.Textarea(attrs={"rows": 3, "class": "form-control"}),
+            "reading_2": forms.Textarea(attrs={"rows": 3, "class": "form-control"}),
+            "gospel": forms.Textarea(attrs={"rows": 3, "class": "form-control"}),
+        }

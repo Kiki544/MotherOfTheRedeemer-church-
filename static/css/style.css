@@ -659,6 +659,124 @@ form span {
   }
 }
 
+/* ===== Bulletin Pages ===== */
+.bulletin-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 25px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+}
+
+.bulletin-container h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #1d3557;
+  margin-bottom: 25px;
+}
+
+.bulletin-container h3 {
+  font-size: 20px;
+  color: #e63946;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
+}
+
+.bulletin-container p {
+  font-size: 16px;
+  color: #2c3e50;
+  margin-bottom: 14px;
+  text-align: justify;
+}
+
+.bulletin-container pre {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 15px;
+  color: #333;
+  white-space: pre-wrap;
+  line-height: 1.6;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+/* Navigation links for bulletin dates */
+.bulletin-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+  justify-content: center;
+}
+
+.bulletin-nav a {
+  padding: 8px 14px;
+  background: #1c2a48;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 14px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.bulletin-nav a:hover {
+  background: #1abc9c;
+  box-shadow: 0 0 10px rgba(26,188,156,0.5);
+  transform: translateY(-2px);
+}
+
+/* Container for bulletin action buttons */
+.bulletin-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+}
+
+/* Base button styling */
+.bulletin-actions button {
+    padding: 6px 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+/* Refetch button */
+.refetch-btn {
+    background-color: #3498db; /* blue */
+    color: #fff;
+}
+
+.refetch-btn:hover {
+    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+/* Delete button */
+.delete-btn {
+    background-color: #e74c3c; /* red */
+    color: #fff;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+    transform: translateY(-1px);
+}
+
+/* Empty text styling */
+.empty {
+    color: #777;
+    font-style: italic;
+}
+
+
+
 
 /* ===== Footer ===== */
 footer {

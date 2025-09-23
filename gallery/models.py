@@ -32,3 +32,43 @@ class AdminSecretCode(models.Model):
     class Meta:
         verbose_name = "Admin Secret Code"
         verbose_name_plural = "Admin Secret Code"
+
+
+from django.db import models
+
+class Bulletin(models.Model):
+    date = models.DateField(unique=True)
+    title = models.CharField(max_length=200, blank=True)
+
+    # Main Readings
+    reading_1 = models.TextField(blank=True, null=True)
+    reading_1_citation = models.CharField(max_length=200, blank=True, null=True)
+    responsorial_psalm = models.TextField(blank=True, null=True)
+    psalm_refrain = models.CharField(max_length=300, blank=True, null=True)
+    psalm_citation = models.CharField(max_length=200, blank=True, null=True)
+    reading_2 = models.TextField(blank=True, null=True)
+    reading_2_citation = models.CharField(max_length=200, blank=True, null=True)
+    gospel = models.TextField(blank=True, null=True)
+    gospel_citation = models.CharField(max_length=200, blank=True, null=True)
+
+    # Optional Memorial Readings
+    reading_1_optional = models.TextField(blank=True, null=True)
+    reading_1_optional_citation = models.CharField(max_length=200, blank=True, null=True)
+    psalm_optional = models.TextField(blank=True, null=True)
+    psalm_optional_refrain = models.CharField(max_length=300, blank=True, null=True)
+    psalm_optional_citation = models.CharField(max_length=200, blank=True, null=True)
+    reading_2_optional = models.TextField(blank=True, null=True)
+    reading_2_optional_citation = models.CharField(max_length=200, blank=True, null=True)
+    gospel_optional = models.TextField(blank=True, null=True)
+    gospel_optional_citation = models.CharField(max_length=200, blank=True, null=True)
+
+    # Liturgical Info
+    day_title = models.CharField(max_length=200, blank=True, null=True)
+    season = models.CharField(max_length=200, blank=True, null=True)
+    memorial = models.CharField(max_length=200, blank=True, null=True)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Bulletin - {self.date}"
+

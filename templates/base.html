@@ -21,6 +21,7 @@
       <a href="{% url 'gallery' %}" class="{% if '/gallery/' in request.path %}active{% endif %}">Gallery</a>
       <a href="{% url 'thanksgiving' %}" class="{% if '/thanksgiving/' in request.path %}active{% endif %}">Thanksgiving</a>
       <a href="{% url 'announcements' %}" class="{% if '/announcements/' in request.path %}active{% endif %}">Announcements</a>
+      <a href="{%url 'bulletin_list' %}" class = "{%if '/bulletins/' in request.path %}active{% endif %}">Bulletins</a>
 
       <!-- About Us Dropdown -->
       <div class="dropdown">
@@ -39,6 +40,7 @@
           <div class="dropdown-content">
             <a href="{% url 'upload_image' %}">Upload Image</a>
             <a href="{% url 'add_announcement' %}">Add Announcement</a>
+            <a href="{% url 'bulletin_add' %}">Add Bulletin</a>
             <a href="{% url 'logout' %}">Logout</a>
           </div>
         </div>
