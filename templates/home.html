@@ -15,20 +15,19 @@
 
 
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Welcome to Our Church</h1>
-            <p>A community of faith, love, and service. We’re glad you’re here!</p>
-            <div class="hero-buttons">
-                <a href="{% url 'gallery' %}" class="btn">View Gallery</a>
-                <a href="{% url 'announcements' %}" class="btn btn-secondary">See Announcements</a>
+    <section class="hero" style="background-image: url('{% static 'images/Churchfront.jpeg' %}');">
+        <div class="hero-overlay">
+            <div class="hero-text">
+                <h1>Welcome to Our Church</h1>
+                <p>A community of faith, love, and service. We’re glad you’re here!</p>
+                <div class="hero-buttons">
+                    <a href="{% url 'gallery' %}" class="btn">View Gallery</a>
+                    <a href="{% url 'announcements' %}" class="btn btn-secondary">See Announcements</a>
+                </div>
             </div>
         </div>
-        <div class="hero-image">
-            <img src="{% static 'images/church-hero.jpg' %}" alt="Church Image">
-        </div>
     </section>
+
 
     <!-- Parish Welcome Section -->
     <section class="welcome-section">

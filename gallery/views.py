@@ -96,7 +96,6 @@ def admin_logout(request):
     return redirect("home")
 
 # Class-based login view for admin
-
 class AdminLoginView(LoginView):
     authentication_form = AdminLoginForm
     template_name = "admin_login.html"

@@ -737,6 +737,41 @@ form span {
     gap: 10px;
 }
 
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* adjust if you want smaller */
+    background-size: contain; /* show entire image */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #000; /* filler background for empty space */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* optional */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+
 /* Base button styling */
 .bulletin-actions button {
     padding: 6px 14px;
