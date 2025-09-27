@@ -10,6 +10,7 @@ SECRET_KEY = config("SECRET_KEY", default="unsafe-secret")
 DEBUG = config("DEBUG", default=False, cast=bool)
 ALLOWED_HOSTS = ["*"]
 
+
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
