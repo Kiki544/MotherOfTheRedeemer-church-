@@ -53,7 +53,7 @@ def delete_image(request, image_id):
     image = get_object_or_404(GalleryImage, id=image_id)
     if request.method == "POST":
         image.delete()
-        return redirect("gallery")  # send back to gallery after delete
+        return redirect("gallery")  
     return render(request, "confirm_delete.html", {"image": image})
 
 # Announcements

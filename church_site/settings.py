@@ -6,10 +6,9 @@ import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SECRET_KEY = config("SECRET_KEY", default="unsafe-secret")
-DEBUG = config("DEBUG", default=False, cast=bool)
+SECRET_KEY = 'django-insecure-test-key'
+DEBUG = True
 ALLOWED_HOSTS = ["*"]
-
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -54,11 +53,17 @@ WSGI_APPLICATION = "church_site.wsgi.application"
 
 
 DATABASES = {
-    "default": dj_database_url.config(
-        default=config("DATABASE_URL", default="sqlite:///db.sqlite3"),
-        conn_max_age=600,
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': 'aws-1-eu-north-1.pooler.supabase.com',
+        'PORT': '5432',
+        'NAME': 'postgres',
+        'USER': 'postgres.fhqnphbmoekbyazxvjkv',
+        'PASSWORD': 'Ayanfeoluwa5!',
+    }
 }
+
+
 
 
 
@@ -81,8 +86,3 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-STORAGES = {
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}

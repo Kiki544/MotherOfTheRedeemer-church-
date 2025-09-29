@@ -1,0 +1,853 @@
+[
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "admin",
+        "model": "logentry"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "auth",
+        "model": "permission"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "auth",
+        "model": "group"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "auth",
+        "model": "user"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "contenttypes",
+        "model": "contenttype"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "sessions",
+        "model": "session"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "gallery",
+        "model": "galleryimage"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "gallery",
+        "model": "announcement"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "gallery",
+        "model": "adminsecretcode"
+    }
+},
+{
+    "model": "contenttypes.contenttype",
+    "fields": {
+        "app_label": "gallery",
+        "model": "bulletin"
+    }
+},
+{
+    "model": "sessions.session",
+    "pk": "4kkgt6506v95i2s6bzj3nxs4576tuwf2",
+    "fields": {
+        "session_data": ".eJxVjEEOwiAQRe_C2hAqDBSX7nuGZphhbNVAUtqV8e7apAvd_vfef6kRt3Uat5aXcWZ1UZ06_W4J6ZHLDviO5VY11bIuc9K7og_a9FA5P6-H-3cwYZu-9Tn3Ekwi7BGiDwTE0RgjngITOBTsXewsdyLC2VnyyZkALkASDhbU-wP9Xzhv:1v2UH2:BqAdo1Jv5n5p1pEo4k3oqwAjrR9AIN4R6KxB9XEvyGE",
+        "expire_date": "2025-10-11T12:43:36.471Z"
+    }
+},
+{
+    "model": "gallery.galleryimage",
+    "pk": 2,
+    "fields": {
+        "image": "gallery/sample2.jpg",
+        "caption": "Thanksgiving Service 2025",
+        "category": "thanksgiving",
+        "uploaded_at": "2025-09-11T12:10:00Z"
+    }
+},
+{
+    "model": "gallery.announcement",
+    "pk": 1,
+    "fields": {
+        "title": "Sunday Service",
+        "message": "Join us this Sunday at 9AM for worship and thanksgiving.",
+        "date_posted": "2025-09-11T12:00:00Z",
+        "event_date": "2025-09-14"
+    }
+},
+{
+    "model": "gallery.announcement",
+    "pk": 2,
+    "fields": {
+        "title": "Youth Fellowship",
+        "message": "All youths are invited for fellowship on Friday at 5PM.",
+        "date_posted": "2025-09-11T12:30:00Z",
+        "event_date": "2025-09-12"
+    }
+},
+{
+    "model": "gallery.adminsecretcode",
+    "pk": 1,
+    "fields": {
+        "code": "church2025",
+        "updated_at": "2025-09-11T12:00:00Z"
+    }
+},
+{
+    "model": "gallery.adminsecretcode",
+    "pk": 2,
+    "fields": {
+        "code": "MYCHURCH2025",
+        "updated_at": "2025-09-11T08:57:02.560Z"
+    }
+},
+{
+    "model": "gallery.bulletin",
+    "pk": 1,
+    "fields": {
+        "date": "2025-09-19",
+        "title": "",
+        "reading_1": "",
+        "reading_1_citation": "",
+        "responsorial_psalm": "",
+        "psalm_refrain": "",
+        "psalm_citation": "",
+        "reading_2": "",
+        "reading_2_citation": "",
+        "gospel": "",
+        "gospel_citation": "",
+        "reading_1_optional": null,
+        "reading_1_optional_citation": null,
+        "psalm_optional": null,
+        "psalm_optional_refrain": null,
+        "psalm_optional_citation": null,
+        "reading_2_optional": null,
+        "reading_2_optional_citation": null,
+        "gospel_optional": null,
+        "gospel_optional_citation": null,
+        "day_title": null,
+        "season": null,
+        "memorial": null,
+        "created_at": "2025-09-19T17:10:58.762Z"
+    }
+},
+{
+    "model": "gallery.bulletin",
+    "pk": 2,
+    "fields": {
+        "date": "2025-09-18",
+        "title": "",
+        "reading_1": "",
+        "reading_1_citation": null,
+        "responsorial_psalm": "",
+        "psalm_refrain": null,
+        "psalm_citation": null,
+        "reading_2": "",
+        "reading_2_citation": null,
+        "gospel": "<div style=\"text-align:justify;\">One of the Pharisees invited Jesus to a meal. When he arrived at the Pharisee&#x2019;s house and took his place at table, a woman came in, who had a bad name in the town. She had heard he was dining with the Pharisee and had brought with her an alabaster jar of ointment. She waited behind him at his feet, weeping, and her tears fell on his feet, and she wiped them away with her hair; then she covered his feet with kisses and anointed them with the ointment.</div><div style=\"text-align:justify; text-indent:1em;\">&#160;&#160;When the Pharisee who had invited him saw this, he said to himself, &#x2018;If this man were a prophet, he would know who this woman is that is touching him and what a bad name she has.&#x2019; Then Jesus took him up and said, &#x2018;Simon, I have something to say to you.&#x2019; &#x2018;Speak, Master&#x2019; was the reply. &#x2018;There was once a creditor who had two men in his debt; one owed him five hundred denarii, the other fifty. They were unable to pay, so he pardoned them both. Which of them will love him more?&#x2019; &#x2018;The one who was pardoned more, I suppose&#x2019; answered Simon. Jesus said, &#x2018;You are right.&#x2019;</div><div style=\"text-align:justify; text-indent:1em;\">&#160;&#160;Then he turned to the woman. &#x2018;Simon,&#x2019; he said &#x2018;you see this woman? I came into your house, and you poured no water over my feet, but she has poured out her tears over my feet and wiped them away with her hair. You gave me no kiss, but she has been covering my feet with kisses ever since I came in. You did not anoint my head with oil, but she has anointed my feet with ointment. For this reason I tell you that her sins, her many sins, must have been forgiven her, or she would not have shown such great love. It is the man who is forgiven little who shows little love.&#x2019; Then he said to her, &#x2018;Your sins are forgiven.&#x2019; Those who were with him at table began to say to themselves, &#x2018;Who is this man, that he even forgives sins?&#x2019; But he said to the woman, &#x2018;Your faith has saved you; go in peace.&#x2019;</div>",
+        "gospel_citation": null,
+        "reading_1_optional": null,
+        "reading_1_optional_citation": null,
+        "psalm_optional": null,
+        "psalm_optional_refrain": null,
+        "psalm_optional_citation": null,
+        "reading_2_optional": null,
+        "reading_2_optional_citation": null,
+        "gospel_optional": null,
+        "gospel_optional_citation": null,
+        "day_title": null,
+        "season": null,
+        "memorial": null,
+        "created_at": "2025-09-19T17:19:33.578Z"
+    }
+},
+{
+    "model": "gallery.bulletin",
+    "pk": 3,
+    "fields": {
+        "date": "2025-09-17",
+        "title": "",
+        "reading_1": "<div style=\"text-align:justify;\">At the moment of writing to you, I am hoping that I may be with you soon; but in case I should be delayed, I wanted you to know how people ought to behave in God&#x2019;s family&#xa0;&#x2013; that is, in the Church of the living God, which upholds the truth and keeps it safe. Without any doubt, the mystery of our religion is very deep indeed:</div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\">He was made visible in the flesh,</div><div style=\"text-indent: -3em; margin-left: 3em;\">attested by the Spirit,</div><div style=\"text-indent: -3em; margin-left: 3em;\">seen by angels,</div><div style=\"text-indent: -3em; margin-left: 3em;\">proclaimed to the pagans,</div><div style=\"text-indent: -3em; margin-left: 3em;\">believed in by the world,</div><div style=\"text-indent: -3em; margin-left: 3em;\">taken up in glory.</div>",
+        "reading_1_citation": null,
+        "responsorial_psalm": "",
+        "psalm_refrain": null,
+        "psalm_citation": null,
+        "reading_2": "",
+        "reading_2_citation": null,
+        "gospel": "<div style=\"text-align:justify;\">Jesus said to the people:</div><div style=\"text-align:justify; text-indent:1em;\">&#160;&#160;&#x2018;What description can I find for the men of this generation? What are they like? They are like children shouting to one another while they sit in the market&#x2010;place:</div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\">&#x2018;&#x201c;We played the pipes for you,</div><div style=\"text-indent: -3em; margin-left: 3em;\">and you wouldn&#x2019;t dance;</div><div style=\"text-indent: -3em; margin-left: 3em;\">we sang dirges,</div><div style=\"text-indent: -3em; margin-left: 3em;\">and you wouldn&#x2019;t cry.&#x201d;</div><div style=\"text-align:justify; margin-top:0.8em;\">&#x2018;For John the Baptist comes, not eating bread, not drinking wine, and you say, &#x201c;He is possessed.&#x201d; The Son of Man comes, eating and drinking, and you say, &#x201c;Look, a glutton and a drunkard, a friend of tax collectors and sinners.&#x201d; Yet Wisdom has been proved right by all her children.&#x2019;</div>",
+        "gospel_citation": null,
+        "reading_1_optional": null,
+        "reading_1_optional_citation": null,
+        "psalm_optional": null,
+        "psalm_optional_refrain": null,
+        "psalm_optional_citation": null,
+        "reading_2_optional": null,
+        "reading_2_optional_citation": null,
+        "gospel_optional": null,
+        "gospel_optional_citation": null,
+        "day_title": null,
+        "season": null,
+        "memorial": null,
+        "created_at": "2025-09-19T21:59:34.045Z"
+    }
+},
+{
+    "model": "gallery.bulletin",
+    "pk": 4,
+    "fields": {
+        "date": "2025-09-11",
+        "title": "",
+        "reading_1": "",
+        "reading_1_citation": null,
+        "responsorial_psalm": "",
+        "psalm_refrain": null,
+        "psalm_citation": null,
+        "reading_2": "",
+        "reading_2_citation": null,
+        "gospel": "",
+        "gospel_citation": null,
+        "reading_1_optional": null,
+        "reading_1_optional_citation": null,
+        "psalm_optional": null,
+        "psalm_optional_refrain": null,
+        "psalm_optional_citation": null,
+        "reading_2_optional": null,
+        "reading_2_optional_citation": null,
+        "gospel_optional": null,
+        "gospel_optional_citation": null,
+        "day_title": null,
+        "season": null,
+        "memorial": null,
+        "created_at": "2025-09-19T22:38:27.027Z"
+    }
+},
+{
+    "model": "gallery.bulletin",
+    "pk": 5,
+    "fields": {
+        "date": "2025-09-20",
+        "title": "",
+        "reading_1": "<div style=\"text-align:justify;\">Before God the source of all life and before Christ, who spoke up as a witness for the truth in front of Pontius Pilate, I put to you the duty of doing all that you have been told, with no faults or failures, until the Appearing of our Lord Jesus Christ,</div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\">who at the due time will be revealed</div><div style=\"text-indent: -3em; margin-left: 3em;\">by God, the blessed and only Ruler of all,</div><div style=\"text-indent: -3em; margin-left: 3em;\">the King of kings and the Lord of lords,</div><div style=\"text-indent: -3em; margin-left: 3em;\">who alone is immortal,</div><div style=\"text-indent: -3em; margin-left: 3em;\">whose home is in inaccessible light,</div><div style=\"text-indent: -3em; margin-left: 3em;\">whom no man has seen and no man is able to see:</div><div style=\"text-indent: -3em; margin-left: 3em;\">to him be honour and everlasting power. Amen.</div>",
+        "reading_1_citation": null,
+        "responsorial_psalm": "<div style=\"text-indent: -3em; margin-left: 3em;\"><i>Come before the Lord, singing for joy.</i></div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\">Cry out with joy to the Lord, all the earth.</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;Serve the Lord with gladness.</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;Come before him, singing for joy.</div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\"><i>Come before the Lord, singing for joy.</i></div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\">Know that he, the Lord, is God.</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;He made us, we belong to him,</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;we are his people, the sheep of his flock.</div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\"><i>Come before the Lord, singing for joy.</i></div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\">Go within his gates, giving thanks.</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;Enter his courts with songs of praise.</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;Give thanks to him and bless his name.</div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\"><i>Come before the Lord, singing for joy.</i></div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\">Indeed, how good is the Lord,</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;eternal his merciful love.</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;He is faithful from age to age.</div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\"><i>Come before the Lord, singing for joy.</i></div>",
+        "psalm_refrain": null,
+        "psalm_citation": null,
+        "reading_2": "",
+        "reading_2_citation": null,
+        "gospel": "<div style=\"text-align:justify;\">With a large crowd gathering and people from every town finding their way to him, Jesus used this parable:</div><div style=\"text-align:justify; text-indent:1em;\">&#160;&#160;&#x2018;A sower went out to sow his seed. As he sowed, some fell on the edge of the path and was trampled on; and the birds of the air ate it up. Some seed fell on rock, and when it came up it withered away, having no moisture. Some seed fell amongst thorns and the thorns grew with it and choked it. And some seed fell into rich soil and grew and produced its crop a hundredfold.&#x2019; Saying this he cried, &#x2018;Listen, anyone who has ears to hear!&#x2019;</div><div style=\"text-align:justify; text-indent:1em;\">&#160;&#160;His disciples asked him what this parable might mean, and he said, &#x2018;The mysteries of the kingdom of God are revealed to you; for the rest there are only parables, so that</div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\">they may see but not perceive,</div><div style=\"text-indent: -3em; margin-left: 3em;\">listen but not understand.</div><div style=\"text-align:justify; margin-top:0.8em;\">&#x2018;This, then, is what the parable means: the seed is the word of God. Those on the edge of the path are people who have heard it, and then the devil comes and carries away the word from their hearts in case they should believe and be saved. Those on the rock are people who, when they first hear it, welcome the word with joy. But these have no root; they believe for a while, and in time of trial they give up. As for the part that fell into thorns, this is people who have heard, but as they go on their way they are choked by the worries and riches and pleasures of life and do not reach maturity. As for the part in the rich soil, this is people with a noble and generous heart who have heard the word and take it to themselves and yield a harvest through their perseverance.&#x2019;</div>",
+        "gospel_citation": null,
+        "reading_1_optional": null,
+        "reading_1_optional_citation": null,
+        "psalm_optional": null,
+        "psalm_optional_refrain": null,
+        "psalm_optional_citation": null,
+        "reading_2_optional": null,
+        "reading_2_optional_citation": null,
+        "gospel_optional": null,
+        "gospel_optional_citation": null,
+        "day_title": null,
+        "season": null,
+        "memorial": null,
+        "created_at": "2025-09-20T20:01:35.501Z"
+    }
+},
+{
+    "model": "gallery.bulletin",
+    "pk": 6,
+    "fields": {
+        "date": "2025-09-21",
+        "title": "",
+        "reading_1": "<div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\">Listen to this, you who trample on the needy</div><div style=\"text-indent: -3em; margin-left: 3em;\">and try to suppress the poor people of the country,</div><div style=\"text-indent: -3em; margin-left: 3em;\">you who say, &#x2018;When will New Moon be over</div><div style=\"text-indent: -3em; margin-left: 3em;\">so that we can sell our corn,</div><div style=\"text-indent: -3em; margin-left: 3em;\">and sabbath, so that we can market our wheat?</div><div style=\"text-indent: -3em; margin-left: 3em;\">Then by lowering the bushel, raising the shekel,</div><div style=\"text-indent: -3em; margin-left: 3em;\">by swindling and tampering with the scales,</div><div style=\"text-indent: -3em; margin-left: 3em;\">we can buy up the poor for money,</div><div style=\"text-indent: -3em; margin-left: 3em;\">and the needy for a pair of sandals,</div><div style=\"text-indent: -3em; margin-left: 3em;\">and get a price even for the sweepings of the wheat.&#x2019;</div><div style=\"text-indent: -3em; margin-left: 3em;\">The Lord swears it by the pride of Jacob,</div><div style=\"text-indent: -3em; margin-left: 3em;\">&#x2018;Never will I forget a single thing you have done.&#x2019;</div>",
+        "reading_1_citation": null,
+        "responsorial_psalm": "<div style=\"text-indent: -3em; margin-left: 3em;\"><i>Praise the Lord, who raises the poor.</i></div><div style=\"text-indent: -3em; margin-left: 3em;\"><b>or</b></div><div style=\"text-indent: -3em; margin-left: 3em;\"><i>Alleluia!</i></div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\">Praise, O servants of the Lord,</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;praise the name of the Lord!</div><div style=\"text-indent: -3em; margin-left: 3em;\">May the name of the Lord be blessed</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;both now and for evermore!</div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\"><i>Praise the Lord, who raises the poor.</i></div><div style=\"text-indent: -3em; margin-left: 3em;\"><b>or</b></div><div style=\"text-indent: -3em; margin-left: 3em;\"><i>Alleluia!</i></div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\">High above all nations is the Lord,</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;above the heavens his glory.</div><div style=\"text-indent: -3em; margin-left: 3em;\">Who is like the Lord, our God,</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;who has risen on high to his throne</div><div style=\"text-indent: -3em; margin-left: 3em;\">yet stoops from the heights to look down,</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;to look down upon heaven and earth?</div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\"><i>Praise the Lord, who raises the poor.</i></div><div style=\"text-indent: -3em; margin-left: 3em;\"><b>or</b></div><div style=\"text-indent: -3em; margin-left: 3em;\"><i>Alleluia!</i></div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\">From the dust he lifts up the lowly,</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;from the dungheap he raises the poor</div><div style=\"text-indent: -3em; margin-left: 3em;\">to set him in the company of princes,</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;yes, with the princes of his people.</div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\"><i>Praise the Lord, who raises the poor.</i></div><div style=\"text-indent: -3em; margin-left: 3em;\"><b>or</b></div><div style=\"text-indent: -3em; margin-left: 3em;\"><i>Alleluia!</i></div>",
+        "psalm_refrain": null,
+        "psalm_citation": null,
+        "reading_2": "<div style=\"text-align:justify;\">My advice is that, first of all, there should be prayers offered for everyone&#xa0;&#x2013; petitions, intercessions and thanksgiving&#xa0;&#x2013; and especially for kings and others in authority, so that we may be able to live religious and reverent lives in peace and quiet. To do this is right, and will please God our saviour: he wants everyone to be saved and reach full knowledge of the truth. For there is only one God, and there is only one mediator between God and mankind, himself a man, Christ Jesus, who sacrificed himself as a ransom for them all. He is the evidence of this, sent at the appointed time, and I have been named a herald and apostle of it and&#xa0;&#x2013; I am telling the truth and no lie&#xa0;&#x2013; a teacher of the faith and the truth to the pagans.</div><div style=\"text-align:justify; text-indent:1em;\">&#160;&#160;In every place, then, I want the men to lift their hands up reverently in prayer, with no anger or argument.</div>",
+        "reading_2_citation": null,
+        "gospel": "<div style=\"text-align:justify;\">Jesus said to his disciples:</div><div style=\"text-align:justify; text-indent:1em;\">&#160;&#160;&#x2018;There was a rich man and he had a steward denounced to him for being wasteful with his property. He called for the man and said, &#x201c;What is this I hear about you? Draw me up an account of your stewardship because you are not to be my steward any longer.&#x201d; Then the steward said to himself, &#x201c;Now that my master is taking the stewardship from me, what am I to do? Dig? I am not strong enough. Go begging? I should be too ashamed. Ah, I know what I will do to make sure that when I am dismissed from office there will be some to welcome me into their homes.&#x201d;</div><div style=\"text-align:justify; text-indent:1em;\">&#160;&#160;Then he called his master&#x2019;s debtors one by one. To the first he said, &#x201c;How much do you owe my master?&#x201d; &#x201c;One hundred measures of oil&#x201d; was the reply. The steward said, &#x201c;Here, take your bond; sit down straight away and write fifty.&#x201d; To another he said, &#x201c;And you, sir, how much do you owe?&#x201d; &#x201c;One hundred measures of wheat&#x201d; was the reply. The steward said, &#x201c;Here, take your bond and write eighty.&#x201d;</div><div style=\"text-align:justify; text-indent:1em;\">&#160;&#160;&#x2018;The master praised the dishonest steward for his astuteness. For the children of this world are more astute in dealing with their own kind than are the children of light.</div><div style=\"text-align:justify; text-indent:1em;\">&#160;&#160;&#x2018;And so I tell you this: use money, tainted as it is, to win you friends, and thus make sure that when it fails you, they will welcome you into the tents of eternity. The man who can be trusted in little things can be trusted in great; the man who is dishonest in little things will be dishonest in great. If then you cannot be trusted with money, that tainted thing, who will trust you with genuine riches? And if you cannot be trusted with what is not yours, who will give you what is your very own?</div><div style=\"text-align:justify; text-indent:1em;\">&#160;&#160;&#x2018;No servant can be the slave of two masters: he will either hate the first and love the second, or treat the first with respect and the second with scorn. You cannot be the slave both of God and of money.&#x2019;</div>",
+        "gospel_citation": null,
+        "reading_1_optional": null,
+        "reading_1_optional_citation": null,
+        "psalm_optional": null,
+        "psalm_optional_refrain": null,
+        "psalm_optional_citation": null,
+        "reading_2_optional": null,
+        "reading_2_optional_citation": null,
+        "gospel_optional": null,
+        "gospel_optional_citation": null,
+        "day_title": null,
+        "season": null,
+        "memorial": null,
+        "created_at": "2025-09-20T21:13:40.357Z"
+    }
+},
+{
+    "model": "gallery.bulletin",
+    "pk": 7,
+    "fields": {
+        "date": "2025-09-15",
+        "title": "",
+        "reading_1": "",
+        "reading_1_citation": null,
+        "responsorial_psalm": "",
+        "psalm_refrain": null,
+        "psalm_citation": null,
+        "reading_2": "",
+        "reading_2_citation": null,
+        "gospel": "",
+        "gospel_citation": null,
+        "reading_1_optional": null,
+        "reading_1_optional_citation": null,
+        "psalm_optional": null,
+        "psalm_optional_refrain": null,
+        "psalm_optional_citation": null,
+        "reading_2_optional": null,
+        "reading_2_optional_citation": null,
+        "gospel_optional": null,
+        "gospel_optional_citation": null,
+        "day_title": null,
+        "season": null,
+        "memorial": null,
+        "created_at": "2025-09-20T21:52:19.695Z"
+    }
+},
+{
+    "model": "gallery.bulletin",
+    "pk": 8,
+    "fields": {
+        "date": "2025-09-22",
+        "title": "",
+        "reading_1": "<div style=\"text-align:justify;\">In the first year of Cyrus king of Persia, to fulfil the word of the Lord that was spoken through Jeremiah, the Lord roused the spirit of Cyrus king of Persia to issue a proclamation and to have it publicly displayed throughout his kingdom: &#x2018;Thus speaks Cyrus king of Persia, &#x201c;The Lord, the God of heaven, has given me all the kingdoms of the earth; he has ordered me to build him a Temple in Jerusalem, in Judah. Whoever there is among you of all his people, may his God be with him! Let him go up to Jerusalem in Judah to build the Temple of the Lord, the God of Israel&#xa0;&#x2013; he is the God who is in Jerusalem. And let each survivor, wherever he lives, be helped by the people of that place with silver and gold, with goods and cattle, as well as voluntary offerings for the Temple of God which is in Jerusalem.&#x201d;&#x2019;</div><div style=\"text-align:justify; text-indent:1em;\">&#160;&#160;Then the heads of families of Judah and of Benjamin, the priests and the Levites, in fact all whose spirit had been roused by God, prepared to go and rebuild the Temple of the Lord in Jerusalem; and all their neighbours gave them every assistance with silver, gold, goods, cattle, quantities of costly gifts and with voluntary offerings of every kind.</div>",
+        "reading_1_citation": null,
+        "responsorial_psalm": "",
+        "psalm_refrain": null,
+        "psalm_citation": null,
+        "reading_2": "",
+        "reading_2_citation": null,
+        "gospel": "<div style=\"text-align:justify;\">Jesus said to the crowds:</div><div style=\"text-align:justify; text-indent:1em;\">&#160;&#160;&#x2018;No one lights a lamp to cover it with a bowl or to put it under a bed. No, he puts it on a lamp&#x2010;stand so that people may see the light when they come in. For nothing is hidden but it will be made clear, nothing secret but it will be known and brought to light. So take care how you hear; for anyone who has will be given more; from anyone who has not, even what he thinks he has will be taken away.&#x2019;</div>",
+        "gospel_citation": null,
+        "reading_1_optional": null,
+        "reading_1_optional_citation": null,
+        "psalm_optional": null,
+        "psalm_optional_refrain": null,
+        "psalm_optional_citation": null,
+        "reading_2_optional": null,
+        "reading_2_optional_citation": null,
+        "gospel_optional": null,
+        "gospel_optional_citation": null,
+        "day_title": null,
+        "season": null,
+        "memorial": null,
+        "created_at": "2025-09-20T21:55:20.520Z"
+    }
+},
+{
+    "model": "gallery.bulletin",
+    "pk": 9,
+    "fields": {
+        "date": "2025-09-23",
+        "title": "",
+        "reading_1": "<div style=\"text-align:justify;\">King Darius wrote to the satrap of Transeuphrates and his colleagues: &#x2018;Leave the high commissioner of Judah and the elders of the Jews to work on this Temple of God; they are to rebuild this Temple of God on its ancient site. This, I decree, is how you must assist the elders of the Jews in the reconstruction of this Temple of God: the expenses of these people are to be paid, promptly and without fail, from the royal revenue&#xa0;&#x2013; that is, from the tribute of Transeuphrates. May the God who causes his name to live there overthrow any king or people who dares to defy this and destroy the Temple of God in Jerusalem! I, Darius, have issued this decree. Let it be obeyed to the letter!&#x2019;</div><div style=\"text-align:justify; text-indent:1em;\">&#160;&#160;The elders of the Jews prospered with their building, inspired by Haggai the prophet and Zechariah son of Iddo. They finished the building in accordance with the order of the God of Israel and the order of Cyrus and of Darius. This Temple was finished on the twenty&#x2010;third day of the month of Adar; it was the sixth year of the reign of King Darius. The Israelites&#xa0;&#x2013; the priests, the Levites and the remainder of the exiles&#xa0;&#x2013; joyfully dedicated this Temple of God; for the dedication of this Temple of God they offered one hundred bulls, two hundred rams, four hundred lambs and, as a sacrifice for sin for the whole of Israel, twelve he&#x2010;goats, corresponding to the number of the tribes of Israel. Then they installed the priests according to their orders in the service of the Temple of God in Jerusalem, as is written in the Book of Moses.</div><div style=\"text-align:justify; text-indent:1em;\">&#160;&#160;The exiles celebrated the Passover on the fourteenth day of the first month. The Levites, as one man, had purified themselves; all were pure, so they sacrificed the passover for all the exiles, for their brothers the priests and for themselves.</div>",
+        "reading_1_citation": null,
+        "responsorial_psalm": "<div style=\"text-indent: -3em; margin-left: 3em;\"><i>I rejoiced when I heard them say: &#x2018;Let us go to God&#x2019;s house.&#x2019;</i></div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\">I rejoiced when I heard them say:</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;&#x2018;Let us go to God&#x2019;s house.&#x2019;</div><div style=\"text-indent: -3em; margin-left: 3em;\">And now our feet are standing</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;within your gates, O Jerusalem.</div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\"><i>I rejoiced when I heard them say: &#x2018;Let us go to God&#x2019;s house.&#x2019;</i></div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\">Jerusalem is built as a city</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;strongly compact.</div><div style=\"text-indent: -3em; margin-left: 3em;\">It is there that the tribes go up,</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;the tribes of the Lord.</div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\"><i>I rejoiced when I heard them say: &#x2018;Let us go to God&#x2019;s house.&#x2019;</i></div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\">For Israel&#x2019;s law it is,</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;there to praise the Lord&#x2019;s name.</div><div style=\"text-indent: -3em; margin-left: 3em;\">There were set the thrones of judgement</div><div style=\"text-indent: -2em; margin-left: 3em;\">&#160;&#160;of the house of David.</div><div style=\"text-indent: -3em; margin-left: 3em; margin-top:0.8em;\"><i>I rejoiced when I heard them say: &#x2018;Let us go to God&#x2019;s house.&#x2019;</i></div>",
+        "psalm_refrain": null,
+        "psalm_citation": null,
+        "reading_2": "",
+        "reading_2_citation": null,
+        "gospel": "<div style=\"text-align:justify;\">The mother and the brothers of Jesus came looking for him, but they could not get to him because of the crowd. He was told, &#x2018;Your mother and brothers are standing outside and want to see you.&#x2019; But he said in answer, &#x2018;My mother and my brothers are those who hear the word of God and put it into practice.&#x2019;</div>",
+        "gospel_citation": null,
+        "reading_1_optional": null,
+        "reading_1_optional_citation": null,
+        "psalm_optional": null,
+        "psalm_optional_refrain": null,
+        "psalm_optional_citation": null,
+        "reading_2_optional": null,
+        "reading_2_optional_citation": null,
+        "gospel_optional": null,
+        "gospel_optional_citation": null,
+        "day_title": null,
+        "season": null,
+        "memorial": null,
+        "created_at": "2025-09-23T12:42:37.716Z"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "add_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "change_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "delete_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view log entry",
+        "content_type": [
+            "admin",
+            "logentry"
+        ],
+        "codename": "view_logentry"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "add_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "change_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "delete_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view permission",
+        "content_type": [
+            "auth",
+            "permission"
+        ],
+        "codename": "view_permission"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "add_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "change_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "delete_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view group",
+        "content_type": [
+            "auth",
+            "group"
+        ],
+        "codename": "view_group"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add user",
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "codename": "add_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change user",
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "codename": "change_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete user",
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "codename": "delete_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view user",
+        "content_type": [
+            "auth",
+            "user"
+        ],
+        "codename": "view_user"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "add_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "change_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "delete_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view content type",
+        "content_type": [
+            "contenttypes",
+            "contenttype"
+        ],
+        "codename": "view_contenttype"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "add_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "change_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "delete_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view session",
+        "content_type": [
+            "sessions",
+            "session"
+        ],
+        "codename": "view_session"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add gallery image",
+        "content_type": [
+            "gallery",
+            "galleryimage"
+        ],
+        "codename": "add_galleryimage"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change gallery image",
+        "content_type": [
+            "gallery",
+            "galleryimage"
+        ],
+        "codename": "change_galleryimage"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete gallery image",
+        "content_type": [
+            "gallery",
+            "galleryimage"
+        ],
+        "codename": "delete_galleryimage"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view gallery image",
+        "content_type": [
+            "gallery",
+            "galleryimage"
+        ],
+        "codename": "view_galleryimage"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add announcement",
+        "content_type": [
+            "gallery",
+            "announcement"
+        ],
+        "codename": "add_announcement"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change announcement",
+        "content_type": [
+            "gallery",
+            "announcement"
+        ],
+        "codename": "change_announcement"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete announcement",
+        "content_type": [
+            "gallery",
+            "announcement"
+        ],
+        "codename": "delete_announcement"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view announcement",
+        "content_type": [
+            "gallery",
+            "announcement"
+        ],
+        "codename": "view_announcement"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add Admin Secret Code",
+        "content_type": [
+            "gallery",
+            "adminsecretcode"
+        ],
+        "codename": "add_adminsecretcode"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change Admin Secret Code",
+        "content_type": [
+            "gallery",
+            "adminsecretcode"
+        ],
+        "codename": "change_adminsecretcode"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete Admin Secret Code",
+        "content_type": [
+            "gallery",
+            "adminsecretcode"
+        ],
+        "codename": "delete_adminsecretcode"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view Admin Secret Code",
+        "content_type": [
+            "gallery",
+            "adminsecretcode"
+        ],
+        "codename": "view_adminsecretcode"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can add bulletin",
+        "content_type": [
+            "gallery",
+            "bulletin"
+        ],
+        "codename": "add_bulletin"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can change bulletin",
+        "content_type": [
+            "gallery",
+            "bulletin"
+        ],
+        "codename": "change_bulletin"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can delete bulletin",
+        "content_type": [
+            "gallery",
+            "bulletin"
+        ],
+        "codename": "delete_bulletin"
+    }
+},
+{
+    "model": "auth.permission",
+    "fields": {
+        "name": "Can view bulletin",
+        "content_type": [
+            "gallery",
+            "bulletin"
+        ],
+        "codename": "view_bulletin"
+    }
+},
+{
+    "model": "auth.user",
+    "fields": {
+        "password": "pbkdf2_sha256$720000$vseSNEBfZNMZoAqje8cpuE$oTMsWSSJQSy9GxOYrzuIqcyoO91d52plWH6F/CO0DGw=",
+        "last_login": "2025-09-27T12:43:36.461Z",
+        "is_superuser": true,
+        "username": "Kiks",
+        "first_name": "",
+        "last_name": "",
+        "email": "kikijk084@gmail.com",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2025-09-11T08:40:42.900Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]
