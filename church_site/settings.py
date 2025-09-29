@@ -53,14 +53,11 @@ WSGI_APPLICATION = "church_site.wsgi.application"
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'HOST': 'aws-1-eu-north-1.pooler.supabase.com',
-        'PORT': '5432',
-        'NAME': 'postgres',
-        'USER': 'postgres.fhqnphbmoekbyazxvjkv',
-        'PASSWORD': 'Ayanfeoluwa5!',
-    }
+    'default': dj_database_url.config(
+        default=os.getenv('DATABASE_URL'),
+        conn_max_age=600,
+        ssl_require=True
+    )
 }
 
 
