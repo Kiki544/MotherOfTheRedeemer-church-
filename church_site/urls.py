@@ -21,7 +21,11 @@ urlpatterns = [
     path("parish-pastoral-council/", views.parish_pastoral_council, name="parish_pastoral_council"),
     path("parish-laity-council/", views.parish_laity_council, name="parish_laity_council"),
 
-    # Bulletins
+    path("harvest-events/", views.harvest_events, name="harvest_events"),
+    path("harvest-events/add/", views.add_harvest_event, name="add_harvest_event"),
+    path("harvest-events/delete/<int:event_id>/", views.delete_harvest_event, name="delete_harvest_event"),
+
+
     path("bulletins/", views.bulletin_list, name="bulletin_list"),
     path("bulletins/add/", views.bulletin_add, name="bulletin_add"),
     path("bulletins/<int:pk>/", views.bulletin_detail, name="bulletin_detail"),

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Harvest Events{% endblock %}
+
+{% block content %}
+<div class="harvest-container">
+    <h1>Proposed New 2025 Harvest Programme</h1>
+
+    <ul class="event-list">
+        {% for event in events %}
+            <li class="event-item">
+                <strong>{{ event.title }}</strong> –
+                <span class="event-date">{{ event.date|date:"jS F Y" }}</span>
+                {% if event.description %}
+                    <br><small>{{ event.description }}</small>
+                {% endif %}
+
+                {% if user.is_authenticated and user.is_staff %}
+                    <a href="{% url 'delete_harvest_event' event.id %}" class="delete-btn">Remove</a>
+                {% endif %}
+            </li>
+        {% empty %}
+            <p>No harvest events added yet.</p>
+        {% endfor %}
+    </ul>
+
+    {% if user.is_authenticated and user.is_staff %}
+        <a href="{% url 'add_harvest_event' %}" class="add-btn">+ Add New Event</a>
+    {% endif %}
+</div>
+{% endblock %}

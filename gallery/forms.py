@@ -4,7 +4,7 @@ from django import forms
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.views import LoginView
-from .models import GalleryImage, Announcement, AdminSecretCode, Bulletin
+from .models import GalleryImage, Announcement, HarvestEvent, AdminSecretCode, Bulletin
 
 # Home page
 def home(request):
@@ -134,4 +134,14 @@ class BulletinForm(forms.ModelForm):
             "responsorial_psalm": forms.Textarea(attrs={"rows": 3, "class": "form-control"}),
             "reading_2": forms.Textarea(attrs={"rows": 3, "class": "form-control"}),
             "gospel": forms.Textarea(attrs={"rows": 3, "class": "form-control"}),
+        }
+
+
+
+class HarvestEventForm(forms.ModelForm):
+    class Meta:
+        model = HarvestEvent
+        fields = ["title", "date", "description"]
+        widgets = {
+            "date": forms.DateInput(attrs={"type": "date"})
         }

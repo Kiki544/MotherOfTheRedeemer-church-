@@ -4,8 +4,8 @@ from django.urls import reverse_lazy
 from django.contrib.auth import logout, login
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.contrib.auth.views import LoginView
-from .models import GalleryImage, Announcement, AdminSecretCode, Bulletin
-from .forms import AnnouncementForm, AdminLoginForm, GalleryUploadForm, BulletinForm
+from .models import HarvestEvent, GalleryImage, Announcement, AdminSecretCode, Bulletin
+from .forms import HarvestEventForm, AnnouncementForm, AdminLoginForm, GalleryUploadForm, BulletinForm
 import requests
 from bs4 import BeautifulSoup
 from django.shortcuts import get_object_or_404, render, redirect
@@ -265,3 +265,29 @@ def bulletin_add(request):
         form = BulletinForm()
 
     return render(request, "bulletin_form.html", {"form": form})
+
+
+# Show all harvest events
+def harvest_events(request):
+    events = HarvestEvent.objects.order_by("date")
+    return render(request, "harvest_events.html", {"events": events})
+
+
+@login_required
+@user_passes_test(lambda u: u.is_staff or u.is_superuser)
+def add_harvest_event(request):
+    if request.method == "POST":
+        form = HarvestEventForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("harvest_events")
+    else:
+        form = HarvestEventForm()
+    return render(request, "add_harvest_event.html", {"form": form})
+
+@login_required
+@user_passes_test(lambda u: u.is_staff or u.is_superuser)
+def delete_harvest_event(request, event_id):
+    event = HarvestEvent.objects.get(id=event_id)
+    event.delete()
+    return redirect("harvest_events")

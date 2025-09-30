@@ -19,17 +19,25 @@
 <div class="gallery-grid">
     {% for img in images %}
         <div class="gallery-item">
-            <img src="{{ img.image.url }}" alt="{{ img.caption }}" class="gallery-image">
+            {% if img.image %}
+                <img src="{{ img.image.url }}" alt="{{ img.caption }}" class="gallery-image">
+            {% elif img.video %}
+                <video controls class="gallery-video">
+                    <source src="{{ img.video.url }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            {% endif %}
+
             {% if img.caption %}
                 <p class="caption">{{ img.caption }}</p>
             {% endif %}
 
             {% if user.is_authenticated and user.is_staff %}
-                <a href="{% url 'delete_image' img.id %}" class="delete-btn">Delete</a>
+                <p><a href="{% url 'delete_image' img.id %}">Delete</a></p>
             {% endif %}
         </div>
     {% empty %}
-        <p>No images available in this category.</p>
+        <p>No media available in this category.</p>
     {% endfor %}
 </div>
 {% endblock %}
