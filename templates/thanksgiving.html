@@ -3,12 +3,17 @@
 
 {% block content %}
 <h1>Thanksgiving Gallery</h1>
-<div class="gallery-container">
+
+<div class="gallery-grid">
     {% for img in images %}
         <div class="gallery-item">
             <img src="{{ img.image.url }}" alt="{{ img.caption }}" class="gallery-image">
             {% if img.caption %}
                 <p class="caption">{{ img.caption }}</p>
+            {% endif %}
+
+            {% if user.is_authenticated and user.is_staff %}
+                <a href="{% url 'delete_image' img.id %}" class="delete-btn">Delete</a>
             {% endif %}
         </div>
     {% empty %}

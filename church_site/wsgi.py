@@ -1,6 +1,8 @@
 import os
 from django.core.wsgi import get_wsgi_application
 from django.conf import settings
+import dotenv 
+dotenv.load_dotenv()
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'church_site.settings')
 

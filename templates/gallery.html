@@ -16,35 +16,20 @@
     </a>
 </div>
 
-<div class="gallery-list">
+<div class="gallery-grid">
     {% for img in images %}
         <div class="gallery-item">
-            <img src="{{ img.image.url }}" alt="{{ img.caption }}">
+            <img src="{{ img.image.url }}" alt="{{ img.caption }}" class="gallery-image">
             {% if img.caption %}
                 <p class="caption">{{ img.caption }}</p>
+            {% endif %}
+
+            {% if user.is_authenticated and user.is_staff %}
+                <a href="{% url 'delete_image' img.id %}" class="delete-btn">Delete</a>
             {% endif %}
         </div>
     {% empty %}
         <p>No images available in this category.</p>
     {% endfor %}
 </div>
-
-<div class="gallery-list">
-  {% for img in images %}
-    <div class="gallery-item">
-        <img src="{{ img.image.url }}" alt="{{ img.caption }}" class="gallery-image">
-        {% if img.caption %}
-            <p class="caption">{{ img.caption }}</p>
-        {% endif %}
-        
-        {% if user.is_authenticated and user.is_staff %}
-            <p><a href="{% url 'delete_image' img.id %}">Delete</a></p>
-        {% endif %}
-    </div>
-{% empty %}
-    <p>No images yet.</p>
-{% endfor %}
-
-</div>
-
 {% endblock %}

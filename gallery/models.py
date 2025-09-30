@@ -1,4 +1,23 @@
 from django.db import models
+from PIL import Image
+from django.db import models
+from io import BytesIO
+from django.core.files.base import ContentFile
+
+# class GalleryImage(models.Model):
+#     CATEGORY_CHOICES = [
+#         ("general", "General Gallery"),
+#         ("thanksgiving", "Thanksgiving"),
+#     ]
+#     image = models.ImageField(upload_to="gallery/")
+#     caption = models.CharField(max_length=255, blank=True)
+#     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, default="general")
+#     uploaded_at = models.DateTimeField(auto_now_add=True)
+
+#     def __str__(self):
+#         return f"{self.caption} ({self.category})"
+
+
 
 class GalleryImage(models.Model):
     CATEGORY_CHOICES = [
@@ -13,6 +32,20 @@ class GalleryImage(models.Model):
     def __str__(self):
         return f"{self.caption} ({self.category})"
 
+    def save(self, *args, **kwargs):
+        """Resize and compress uploaded images before saving."""
+        super().save(*args, **kwargs)
+
+        img = Image.open(self.image.path)
+
+        #  Resize to max 1200px (keeps aspect ratio)
+        max_size = (1200, 1200)
+        img.thumbnail(max_size, Image.Resampling.LANCZOS)
+
+        #  Save compressed (quality=80 gives good balance)
+        img.save(self.image.path, format="JPEG", quality=80, optimize=True)
+
+
 class Announcement(models.Model):
     title = models.CharField(max_length=200)
     message = models.TextField()
@@ -21,6 +54,7 @@ class Announcement(models.Model):
 
     def __str__(self):
         return self.title
+
 
 class AdminSecretCode(models.Model):
     code = models.CharField(max_length=100)
@@ -34,7 +68,6 @@ class AdminSecretCode(models.Model):
         verbose_name_plural = "Admin Secret Code"
 
 
-from django.db import models
 
 class Bulletin(models.Model):
     date = models.DateField(unique=True)
